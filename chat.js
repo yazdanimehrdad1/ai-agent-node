@@ -12,7 +12,8 @@ const userPrompt = 'Hello, how are you?'
 const newMessage = async (history, message) => {
     const result = await openai.chat.completions.create({
         model: 'gpt-4',
-        messages: [...history, message]
+        messages: [...history, message],
+        temperature: 0,
     })
 
     return result.choices[0].message
